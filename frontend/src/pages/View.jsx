@@ -44,8 +44,9 @@ const View = () => {
     destinationTo: '',
     date: '',
     user: '',
-  });
 
+  });
+  refetch();
   const handleEdit = (booking) => {
     setEditingBooking(booking.id);
     setFormData({
@@ -54,6 +55,7 @@ const View = () => {
       date: booking.date,
       user: booking.user,
     });
+    refetch();
   };
 
   const handleUpdate = async (id) => {
@@ -66,8 +68,11 @@ const View = () => {
         user: formData.user,
       },
     });
-    setEditingBooking(null);
+
+    alert('The Ticket is updated')
     refetch();
+
+    setEditingBooking(null);
   };
 
   const handleDelete = async (id) => {

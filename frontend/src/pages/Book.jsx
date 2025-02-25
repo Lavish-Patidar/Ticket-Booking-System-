@@ -31,6 +31,13 @@ const Book = () => {
                 variables: formData,
             });
             console.log(data);
+            alert('Booking Successfull');
+            setFormData({
+                destinationFrom: '',
+                destinationTo: '',
+                date: '',
+                user: ''
+            })
         } catch (error) {
             console.error(error);
         }
